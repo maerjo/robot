@@ -11,14 +11,14 @@ ${SEARCH_TERM} = ferrari 458
 
 *** Keywords ***
 Begin Web Test
-    Open Browser                about:blank                 chrome
+    Open Browser                about:blank                 ${BROWSER}
 
 Go to Web Page
     Load Page
     Verify Page Loaded
 
 Load Page
-    Go To                       http://www.amazon.com
+    Go To                       ${URL}
 
 Verify Page Loaded
     Wait Until Page Contains    Your Amazon.com
@@ -29,8 +29,8 @@ Search for Product
     Verify Search Completed
 
 Enter Search Term
-    Input Text                  id:twotabsearchtextbox      ferrari 458
-
+    Input Text                  id:twotabsearchtextbox      ${SEARCH_TERM}
+    
 Submit Search
     Click button                xpath://*[@id="nav-search"]/form/div[2]/div/input
 
