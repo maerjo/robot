@@ -4,6 +4,11 @@ Library         SeleniumLibrary
 Test Setup      Begin Web Test
 Test Teardown   End Web Test
 
+*** Variables ***
+${BROWSER} = chrome
+${URL} = http://www.amazon.com
+${SEARCH_TERM} = ferrari 458
+
 *** Keywords ***
 Begin Web Test
     Open Browser                about:blank                 chrome
